@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181719">
+  <meta name="description" content="Оцени знакомые фильмы и получи персональную подборку.">
+  <title>Кино для тебя</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="movies.js" defer></script>
+  <script src="recommender.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <h1>Кино для тебя<span>.</span></h1>
+      <p>Оцени знакомые фильмы, чтобы подобрать следующие.</p>
+    </header>
+
+    <nav aria-label="Разделы">
+      <button type="button" id="catalog-tab" aria-controls="catalog" aria-pressed="true">Каталог</button>
+      <button type="button" id="picks-tab" aria-controls="picks" aria-pressed="false">Рекомендации <span id="pick-count" hidden></span></button>
+    </nav>
+    <p id="storage-status" role="status" hidden></p>
+
+    <section id="catalog" aria-labelledby="catalog-tab">
+      <label for="search">Найти фильм</label>
+      <input id="search" type="search" placeholder="Например, Интерстеллар" autocomplete="off">
+      <p id="catalog-status" class="status" role="status"></p>
+      <ul id="movie-list" class="cards"></ul>
+    </section>
+
+    <section id="picks" aria-labelledby="picks-tab" hidden>
+      <p id="picks-status" class="status" role="status"></p>
+      <button type="button" class="return-button" id="back-to-catalog" hidden>Перейти к оценкам</button>
+      <ul id="pick-list" class="cards"></ul>
+    </section>
+    <p id="rating-status" class="sr-only" role="status"></p>
+  </main>
+</body>
+</html>
